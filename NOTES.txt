@@ -1,0 +1,78 @@
+Welcome, who am I?
+
+
+3 Sections
+
+Visual Novels
+Ren'Py
+How to Make
+Questions
+
+
+What is a Visual novel.
+----------------------
+
+Show dialogue background, sprites, text, menu.
+
+History
+
+* Japan and USA (Ever 17)
+
+Anime inspired by VNs.
+American VNs.
+KS. DDLC.
+
+Why visual novels?
+
+* First person visual.
+* Small teams.
+
+  * Writer
+  * Artist
+  * Music, VA, Proofreader, etc.
+  * Programmer
+
+
+Ren'Py
+------
+
+Game engine.
+
+* 19 years old.
+* Name is short for Ren'Ai games Python.
+* Free and open source. No Charge
+* Platforms
+
+Types of games.
+
+* Visual Novel
+* Choice based sim.
+* RPG
+* Not other games.
+
+Who's it For?
+
+* Non-Programmers
+* Intermediate
+* Complex
+
+* The big view of all the games.
+
+
+Download and Install
+--------------------
+
+* Will download and install editor, etc.
+
+Run
+---
+
+Make First Game
+---------------
+
+Say statements.
+
+
+keep going. 
+
+
