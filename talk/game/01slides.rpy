@@ -10,9 +10,7 @@ python early:
 
 
     def parse(l):
-        rv = l.require(l.simple_expression)
-        l.expect_noblock("statement")
-        l.expect_eol()
+        rv = l.require(l.rest)
 
         return rv
 
@@ -37,14 +35,19 @@ python early:
     stmt("slide", title=True)
     stmt("title", title=True)
     stmt("oneline", title=True)
+    stmt("notitle", title=True)
     stmt("line")
     stmt("smallline")
     stmt("subtitle")
     stmt("smallsubtitle")
     stmt("add")
 
+    stmt("example")
+    stmt("tinyexample")
+
 
 screen slide():
+    zorder 500
 
     frame:
         if slide_kind == "slide":
@@ -60,6 +63,9 @@ screen slide():
             margin (20, 20)
             padding (60, 60)
             align (0.5, 0.33)
+        if slide_kind == "notitle":
+            background Null()
+            margin (20, 20)
 
         has vbox
 
@@ -83,29 +89,55 @@ screen slide():
 
                 null height 40
 
+            elif l.kind == "notitle":
+
+                pass
+
             elif l.kind == "line" or l.kind == "oneline":
 
-                    text "[l.text]":
-                        size 80
+                text "[l.text]":
+                    size 70
 
             elif l.kind == "smallline":
 
-                    text "[l.text]":
-                        size 50
+                text "[l.text]":
+                    size 45
 
             elif l.kind == "subtitle":
 
-                    text "[l.text]":
-                        size 80
-                        xalign 0.5
-                        text_align 0.5
+                text "[l.text]":
+                    size 80
+                    xalign 0.5
+                    text_align 0.5
 
             elif l.kind == "smallsubtitle":
 
-                    text "[l.text]":
+                text "[l.text]":
+                    size 50
+                    xalign 0.5
+                    text_align 0.5
+
+            elif l.kind == "example":
+
+                frame:
+                    top_margin 20
+                    bottom_padding 30
+                    left_padding 20
+                    right_padding 20
+                    text example_code(l.text):
                         size 50
-                        xalign 0.5
-                        text_align 0.5
+                        color "#101010"
+
+            elif l.kind == "tinyexample":
+
+                frame:
+                    top_margin -20
+                    bottom_padding 20
+                    left_padding 20
+                    right_padding 20
+                    text example_code(l.text):
+                        size 27
+                        color "#101010"
 
 
             elif l.kind == "add":
