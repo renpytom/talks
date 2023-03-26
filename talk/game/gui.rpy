@@ -66,7 +66,7 @@ define gui.name_text_font = "fonts/regular.ttf"
 define gui.interface_text_font = "fonts/semibold.ttf"
 
 ## The size of normal dialogue text.
-define gui.text_size = 40
+define gui.text_size = 50
 
 ## The size of character names.
 define gui.name_text_size = 50
@@ -284,7 +284,7 @@ define gui.main_menu_text_xalign = 1.0
 ## components when an overlay or window is not present.
 
 ## Generic frames.
-define gui.frame_borders = Borders(6, 6, 6, 6)
+define gui.frame_borders = Borders(20, 20, 20, 20)
 
 ## The frame that is used as part of the confirm screen.
 define gui.confirm_frame_borders = Borders(60, 60, 60, 60)
@@ -296,7 +296,7 @@ define gui.skip_frame_borders = Borders(24, 8, 75, 8)
 define gui.notify_frame_borders = Borders(24, 8, 60, 8)
 
 ## Should frame backgrounds be tiled?
-define gui.frame_tile = False
+define gui.frame_tile = True
 
 
 ## Bars, Scrollbars, and Sliders ###############################################

@@ -36,14 +36,24 @@ python early:
 
     stmt("slide", title=True)
     stmt("title", title=True)
-    stmt("l")
-    stmt("st")
+    stmt("oneline", title=True)
+    stmt("line")
+    stmt("smallline")
+    stmt("subtitle")
+    stmt("smallsubtitle")
+    stmt("add")
 
 
 screen slide():
 
     frame:
         if slide_kind == "slide":
+            margin (20, 20)
+            top_padding 40
+            bottom_padding 40
+            left_padding 40
+            right_padding 80
+        elif slide_kind == "oneline":
             margin (20, 20)
             padding (40, 40)
         elif slide_kind == "title":
@@ -73,17 +83,34 @@ screen slide():
 
                 null height 40
 
-            elif l.kind == "l":
+            elif l.kind == "line" or l.kind == "oneline":
 
                     text "[l.text]":
                         size 80
 
-            elif l.kind == "st":
+            elif l.kind == "smallline":
+
+                    text "[l.text]":
+                        size 50
+
+            elif l.kind == "subtitle":
 
                     text "[l.text]":
                         size 80
                         xalign 0.5
                         text_align 0.5
+
+            elif l.kind == "smallsubtitle":
+
+                    text "[l.text]":
+                        size 50
+                        xalign 0.5
+                        text_align 0.5
+
+
+            elif l.kind == "add":
+
+                add l.text xalign 0.5
 
             else:
 
