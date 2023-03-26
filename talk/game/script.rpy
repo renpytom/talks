@@ -34,12 +34,12 @@ init python:
 screen launch():
     zorder 10
 
-    frame:
-        align (0.0, 1.0)
+
+    textbutton "Launch":
+        action Launch()
+        align (1.0, 1.0)
         margin (20, 20)
         padding (20, 20)
-
-        textbutton "Launch" action Launch()
 
 image logo spin:
     "logo base"
@@ -95,7 +95,7 @@ label start:
 
     menu:
 
-        e "Visual Novels often have choices in them that affect the story."
+        e "Visual Novels often have choices in them that affect the story. What do you think about that?"
 
         "That sounds cool!":
             pass
@@ -230,7 +230,7 @@ label start:
     slide "Dialogue"
 
     example '''"I was at Brook Con, when someone came up to me..."'''
-    smallline "Dialogue is in quotes."
+    smallline "Narration in quotes."
 
     example '''e "Hello there, I'm Eileen, and I've been with Ren'Py since the start."'''
     smallline "When a character speaks, their short name is written first."
@@ -242,12 +242,14 @@ label start:
     slide "Image Names"
 
     line "Put the image files in images directory"
-    smallline "'bg sac.jpg' becomes 'bg sac'."
+    smallline "'BG SAC.jpg' becomes 'bg sac'."
     smallline "'eileen happy.png' becomes 'eileen happy'."
     line "The first part of an image is the tag"
     smallline "For 'eileen happy', the tag is 'eileen'."
     line "The rest of the image name are the attributes"
     smallline "For 'eileen happy', the one attribute is 'happy'."
+    line "Names start with a letter, and contain letters, numbers, and underscores"
+
     pause
 
 
@@ -264,7 +266,7 @@ label start:
     smallline "The hide statement hides an image."
     pause
 
-    slide "Label and Jump"
+    slide "Label, Jump, and Return"
 
     example '''label start:'''
     smallline "The label statement defines a label."
@@ -329,7 +331,12 @@ menu:
     smallline "The transform statement defines a custom transform"
     smallline "X from 0.0 (left) to 1.0 (right)."
     smallline "Y from 0.0 (top) to 1.0 (bottom)."
+
+    example '''show eileen happy at midright'''
+
     pause
+
+
 
 
     slide "Transitions"
@@ -415,6 +422,8 @@ else:
     slide "What We Didn't Cover"
 
     line "Movie Playback"
+    line "Voice Acting"
+    line "Translations"
     line "ATL: Animation and Transformation Language"
     line "GUI: Simple Customization of the UI"
     line "Screen Language: Advanced Customization of the UI"

@@ -1143,7 +1143,7 @@ screen confirm(message, yes_action, no_action):
     ## Ensure other screens do not get input while this screen is displayed.
     modal True
 
-    zorder 200
+    zorder 1000
 
     style_prefix "confirm"
 

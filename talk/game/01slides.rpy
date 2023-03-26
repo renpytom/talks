@@ -96,6 +96,7 @@ screen slide():
             elif l.kind == "line" or l.kind == "oneline":
 
                 text "[l.text]":
+                    line_spacing -15
                     size 70
 
             elif l.kind == "smallline":
