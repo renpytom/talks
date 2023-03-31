@@ -49,102 +49,106 @@ python early:
 screen slide():
     zorder 500
 
-    frame:
-        if slide_kind == "slide":
-            margin (20, 20)
-            top_padding 40
-            bottom_padding 40
-            left_padding 40
-            right_padding 80
-        elif slide_kind == "oneline":
-            margin (20, 20)
-            padding (40, 40)
-        elif slide_kind == "title":
-            margin (20, 20)
-            padding (60, 60)
-            align (0.5, 0.33)
-        if slide_kind == "notitle":
-            background Null()
-            margin (20, 20)
+    fixed:
 
-        has vbox
+        at Transform(perspective=True)
 
-        for l in slide_lines:
+        frame:
+            if slide_kind == "slide":
+                margin (20, 20)
+                top_padding 40
+                bottom_padding 40
+                left_padding 40
+                right_padding 80
+            elif slide_kind == "oneline":
+                margin (20, 20)
+                padding (40, 40)
+            elif slide_kind == "title":
+                margin (20, 20)
+                padding (60, 60)
+                align (0.5, 0.33)
+            if slide_kind == "notitle":
+                background Null()
+                margin (20, 20)
 
-            if l.kind == "slide":
+            has vbox
 
-                text "[l.text]":
-                    font "fonts/medium.ttf"
-                    size 100
+            for l in slide_lines:
 
-                null height 40
+                if l.kind == "slide":
 
-            elif l.kind == "title":
+                    text "[l.text]":
+                        font "fonts/medium.ttf"
+                        size 100
 
-                text "[l.text]":
-                    font "fonts/medium.ttf"
-                    size 100
-                    xalign 0.5
-                    text_align 0.5
+                    null height 40
 
-                null height 40
+                elif l.kind == "title":
 
-            elif l.kind == "notitle":
+                    text "[l.text]":
+                        font "fonts/medium.ttf"
+                        size 100
+                        xalign 0.5
+                        text_align 0.5
 
-                pass
+                    null height 40
 
-            elif l.kind == "line" or l.kind == "oneline":
+                elif l.kind == "notitle":
 
-                text "[l.text]":
-                    line_spacing -15
-                    size 70
+                    pass
 
-            elif l.kind == "smallline":
+                elif l.kind == "line" or l.kind == "oneline":
 
-                text "[l.text]":
-                    size 45
+                    text "[l.text]":
+                        line_spacing -15
+                        size 70
 
-            elif l.kind == "subtitle":
+                elif l.kind == "smallline":
 
-                text "[l.text]":
-                    size 80
-                    xalign 0.5
-                    text_align 0.5
+                    text "[l.text]":
+                        size 45
 
-            elif l.kind == "smallsubtitle":
+                elif l.kind == "subtitle":
 
-                text "[l.text]":
-                    size 50
-                    xalign 0.5
-                    text_align 0.5
+                    text "[l.text]":
+                        size 80
+                        xalign 0.5
+                        text_align 0.5
 
-            elif l.kind == "example":
+                elif l.kind == "smallsubtitle":
 
-                frame:
-                    top_margin 20
-                    bottom_padding 30
-                    left_padding 20
-                    right_padding 20
-                    text example_code(l.text):
+                    text "[l.text]":
                         size 50
-                        color "#101010"
+                        xalign 0.5
+                        text_align 0.5
 
-            elif l.kind == "tinyexample":
+                elif l.kind == "example":
 
-                frame:
-                    top_margin -20
-                    bottom_padding 20
-                    left_padding 20
-                    right_padding 20
-                    text example_code(l.text):
-                        size 27
-                        color "#101010"
+                    frame:
+                        top_margin 20
+                        bottom_padding 30
+                        left_padding 20
+                        right_padding 20
+                        text example_code(l.text):
+                            size 50
+                            color "#101010"
+
+                elif l.kind == "tinyexample":
+
+                    frame:
+                        top_margin -20
+                        bottom_padding 20
+                        left_padding 20
+                        right_padding 20
+                        text example_code(l.text):
+                            size 27
+                            color "#101010"
 
 
-            elif l.kind == "add":
+                elif l.kind == "add":
 
-                add l.text xalign 0.5
+                    add l.text xalign 0.5
 
-            else:
+                else:
 
-                text "Unknown kind: [l.kind]"
+                    text "Unknown kind: [l.kind]"

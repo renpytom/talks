@@ -43,7 +43,8 @@ screen launch():
 
 image logo spin:
     "logo base"
-    yrotate 1
+    yrotate 0.0
+    easein 2.5 yrotate 720.0
 
 
 label main_menu:
@@ -54,9 +55,6 @@ label main_menu:
 label start:
 
     $ quick_menu = False
-
-    camera:
-        perspective True
 
     scene bg roof
 
@@ -160,7 +158,7 @@ label start:
     scene bg roof
 
     title "What is Ren'Py?"
-    add "logo base"
+    add "logo spin"
     subtitle "Free and Open Source Visual Novel Engine"
     smallsubtitle "for Windows, Mac, Linux, Android, iOS, Chromebook, Web"
     pause
@@ -301,7 +299,7 @@ menu:
 
     line "Put the music in the audio directory."
 
-    example '''play music "sun-flower-slow-drag.ogg"'''
+    example '''play music "sunflower-slow-drag.ogg"'''
     smallline "The play music statement plays music, and replaces playing music."
 
     example '''stop music'''

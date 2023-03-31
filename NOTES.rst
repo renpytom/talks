@@ -526,7 +526,7 @@ can make your own extensions to it in Python.
 For More Information
 --------------------
 
-The documentaiton is on the Ren'Py website, and there's a lot of Information
+The documentation is on the Ren'Py website, and there's a lot of information
 there. You can also ask questions on the Ren'Py Discord server, or go from
 there to the Lemma Soft forums.
 

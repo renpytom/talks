@@ -1,33 +1,39 @@
-﻿# The script of the game goes in this file.
+﻿define e = Character("Eileen")
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-define e = Character("Eileen")
-
-
-# The game starts here.
 
 label start:
+    play music "sunflower-slow-drag.ogg"
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    scene bg sac
 
-    scene bg room
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    "I was at Brook Con, when someone came up to me..."
 
     show eileen happy
+    with dissolve
 
-    # These display lines of dialogue.
+    e "Hello there, I'm Eileen, and I've been with Ren'Py since the start."
 
-    e "You've created a new Ren'Py game."
+menu:
+    e "Would you like to learn how to make a Visual Novel?"
+    "Yes!":
+        jump attend_panel
+    "I already did.":
+        jump after_panel
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
 
-    # This ends the game.
+label attend_panel:
+
+    e "Great! I'll see you there!"
+
+    return
+
+label after_panel:
+
+    show eileen vhappy
+    with dissolve
+
+    e "That's great! I hope you learned a lot."
+
+    e "I'm looking forward to seeing what you create!"
 
     return
